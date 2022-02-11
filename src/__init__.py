@@ -1,0 +1,1 @@
+from src.book import bingoBook, libgenBook
