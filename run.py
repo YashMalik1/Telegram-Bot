@@ -1,7 +1,7 @@
 import subprocess
 
 # Path to your python in the env
-pythonBinary = "./venv/Scripts/python"
+pythonBinary = "python3"
 
 # Path to your manage.py file
 mainPy = "./main.py"
