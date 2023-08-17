@@ -3,6 +3,8 @@ from telegram import Update
 import logging
 from src import bingoBook, libgenBook
 
+import http.server as server
+
 
 updater = Updater(
     token="5111390761:AAGd2eg0BWAwURt0VPL4ZGkuKyyXvzmwB_g", use_context=True)
@@ -69,3 +71,15 @@ dispatcher.add_handler(CommandHandler('libgen', book_libgen))
 dispatcher.add_handler(MessageHandler(Filters.document, file_handler))
 
 updater.start_polling()
+print('non blocking')
+class MyHTTPRequestHandler(server.SimpleHTTPRequestHandler):
+    # If needed, you can customize this handler, but the basic one should suffice for serving files.
+    pass
+
+def run(server_class=server.HTTPServer, handler_class=MyHTTPRequestHandler):
+    server_address = ('', 3000)  # Serve on all addresses, port 8000
+    httpd = server_class(server_address, handler_class)
+    print("Server started at http://localhost:3000/")
+    httpd.serve_forever()
+
+run()
