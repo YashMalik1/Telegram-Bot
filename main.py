@@ -5,7 +5,7 @@ from src import bingoBook, libgenBook
 
 
 updater = Updater(
-    token="5043185876:AAFKFXMhfdqlnhHOpdd9EYZxa2f_PMcUk1E", use_context=True)
+    token="5111390761:AAGd2eg0BWAwURt0VPL4ZGkuKyyXvzmwB_g", use_context=True)
 
 dispatcher = updater.dispatcher
 
